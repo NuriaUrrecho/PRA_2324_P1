@@ -79,7 +79,7 @@ public:
     }
 
     // Obtener un elemento
-    T get(int pos) override {
+    T get(int pos) const override {
         if (pos < 0 || pos >= n) {
             throw std::out_of_range("Posición fuera de rango");
         }
@@ -87,7 +87,7 @@ public:
     }
 
     // Buscar un elemento
-    int search(T e) override {
+    int search(T e) const override {
         for (int i = 0; i < n; ++i) {
             if (arr[i] == e) {
                 return i;  // Retornar la posición si se encuentra
@@ -97,12 +97,12 @@ public:
     }
 
     // Verificar si la lista está vacía
-    bool empty() override {
+    bool empty() const override {
         return n == 0;
     }
 
     // Retornar el tamaño de la lista
-    int size() override {
+    int size() const override {
         return n;
     }
 
